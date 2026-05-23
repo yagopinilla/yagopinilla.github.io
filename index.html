@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yago Pinilla Fernández — Senior Product Manager specializing in eCommerce and logistics systems." />
+  <title>Yago Pinilla Fernández</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:    #4ade80;
+      --bg:       #0d0d0d;
+      --bg-block: #111111;
+      --border:   rgba(255,255,255,0.08);
+      --text:     #e5e5e5;
+      --muted:    #888;
+      --dimmer:   #555;
+      --radius:   6px;
+      --max-w:    680px;
+      --font:     'JetBrains Mono', 'Fira Mono', 'Cascadia Code', 'Courier New', monospace;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+      min-height: 100vh;
+    }
+
+    a { color: var(--text); text-decoration: none; }
+
+    .site-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    .block {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--bg-block);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.875rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .win-title { font-size: 11px; color: var(--dimmer); flex: 1; text-align: center; }
+
+    .ascii-name {
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: var(--green);
+      letter-spacing: 0px;
+      margin-bottom: 1rem;
+      overflow-x: hidden;
+      font-family: var(--font);
+      white-space: pre;
+      text-align: center;
+    }
+
+    .bio {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .meta { font-size: 12px; color: var(--dimmer); margin-top: 0.5rem; }
+    .meta a { color: var(--dimmer); transition: color 0.15s; }
+    .meta a:hover { color: var(--green); }
+
+    .cmd-line { font-size: 12px; color: var(--muted); margin-bottom: 0.875rem; }
+
+    .green { color: var(--green); }
+
+    /* Links */
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.55rem 0;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 13px;
+      color: var(--text);
+      transition: color 0.15s;
+    }
+    .link-row:last-child { border-bottom: none; }
+    .link-row:hover .link-title,
+    .link-row:hover .arrow { color: var(--green); }
+    .link-row:hover .link-icon svg { stroke: var(--green); }
+
+    .link-icon { display: flex; align-items: center; width: 18px; flex-shrink: 0; }
+    .link-icon svg { width: 15px; height: 15px; stroke: var(--dimmer); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.15s; }
+
+    .link-title { flex: 1; }
+    .link-desc  { font-size: 11px; color: var(--dimmer); }
+    .arrow      { color: var(--dimmer); transition: color 0.15s; }
+
+    /* Experience */
+    .exp-entry { padding: 0.65rem 0; border-bottom: 0.5px solid var(--border); }
+    .exp-entry:last-child { border-bottom: none; }
+    .exp-row { display: flex; justify-content: space-between; align-items: baseline; }
+    .exp-title   { font-size: 13px; font-weight: 500; }
+    .exp-date    { font-size: 11px; color: var(--dimmer); }
+    .exp-company { font-size: 12px; color: var(--muted); }
+    .exp-loc     { font-size: 11px; color: var(--dimmer); }
+
+    /* Skills */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+      background: var(--bg);
+    }
+
+    /* Footer */
+    .footer-line {
+      font-size: 12px;
+      color: var(--dimmer);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 0.25rem;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px; height: 14px;
+      background: var(--green);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    @media (max-width: 480px) {
+      .ascii-name { font-size: 7px; }
+      .block { padding: 1rem; }
+      .link-desc { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="site-wrap">
+
+    <!-- Hero -->
+    <section class="block" aria-label="Introduction">
+      <div class="terminal-bar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="win-title">yagopinilla.com — bash</span>
+      </div>
+      <pre class="ascii-name" aria-label="yagopinilla">
+██╗   ██╗ █████╗  ██████╗  ██████╗
+╚██╗ ██╔╝██╔══██╗██╔════╝ ██╔═══██╗
+ ╚████╔╝ ███████║██║  ███╗██║   ██║
+  ╚██╔╝  ██╔══██║██║   ██║██║   ██║
+   ██║   ██║  ██║╚██████╔╝╚██████╔╝
+   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝
+
+██████╗ ██╗███╗   ██╗██╗██╗     ██╗      █████╗
+██╔══██╗██║████╗  ██║██║██║     ██║     ██╔══██╗
+██████╔╝██║██╔██╗ ██║██║██║     ██║     ███████║
+██╔═══╝ ██║██║╚██╗██║██║██║     ██║     ██╔══██║
+██║     ██║██║ ╚████║██║███████╗███████╗██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝╚═╝  ╚═╝</pre>
+      <p class="bio">Senior Product Manager with 8+ years driving eCommerce and logistics systems at global scale. I lead cross-functional teams through complex challenges — turning ambiguous problems into clear roadmaps and measurable outcomes. Passionate about bridging business strategy with technical execution to ship products that matter.</p>
+      <p class="meta"><span class="green">▶</span> A Coruña, Galicia, Spain &nbsp;·&nbsp; <a href="mailto:yagopinilla@gmail.com">yagopinilla@gmail.com</a></p>
+    </section>
+
+    <!-- Links -->
+    <section class="block" aria-label="Links">
+      <p class="cmd-line"><span class="green">yagopinilla@ibm5150:~$</span> cat links.txt</p>
+      <nav>
+        <a class="link-row" href="https://linkedin.com/in/yagopinilla" target="_blank" rel="noopener">
+          <span class="link-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </span>
+          <span class="link-title">LinkedIn</span>
+          <span class="link-desc">linkedin.com/in/yagopinilla</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="mailto:yagopinilla@gmail.com">
+          <span class="link-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <span class="link-title">Email</span>
+          <span class="link-desc">yagopinilla@gmail.com</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="https://raw.githubusercontent.com/yagopinilla/cv/refs/heads/master/YagoPF_CV_en.pdf" target="_blank" rel="noopener">
+          <span class="link-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </span>
+          <span class="link-title">CV / Résumé <span style="color:var(--dimmer);font-size:10px;">EN</span></span>
+          <span class="link-desc">Download PDF</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="https://raw.githubusercontent.com/yagopinilla/cv/refs/heads/master/YagoPF_CV_es.pdf" target="_blank" rel="noopener">
+          <span class="link-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </span>
+          <span class="link-title">CV / Currículum <span style="color:var(--dimmer);font-size:10px;">ES</span></span>
+          <span class="link-desc">Descargar PDF</span>
+          <span class="arrow">→</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Experience -->
+    <section class="block" aria-label="Experience">
+      <p class="cmd-line"><span class="green">yagopinilla@ibm5150:~$</span> cat experience.log</p>
+
+      <div class="exp-entry">
+        <div class="exp-row">
+          <span class="exp-title">Product Manager</span>
+          <span class="exp-date">2023 — present</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-company">Inditex</span>
+          <span class="exp-loc">A Coruña, Spain</span>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-row">
+          <span class="exp-title">Domain Leader — Sorting &amp; Packing</span>
+          <span class="exp-date">2022 — 2023</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-company">Inditex</span>
+          <span class="exp-loc">A Coruña, Spain</span>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-row">
+          <span class="exp-title">Product Owner</span>
+          <span class="exp-date">2018 — 2022</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-company">Zara.com (Inditex)</span>
+          <span class="exp-loc">A Coruña, Spain</span>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-row">
+          <span class="exp-title">Service Manager</span>
+          <span class="exp-date">2016 — 2018</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-company">Jeppesen Systems AB (Boeing)</span>
+          <span class="exp-loc">Göteborg, Sweden</span>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-row">
+          <span class="exp-title">Computer Engineer</span>
+          <span class="exp-date">2014 — 2016</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-company">Gridcore AB</span>
+          <span class="exp-loc">Göteborg, Sweden</span>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-row">
+          <span class="exp-title">Computer Engineering</span>
+          <span class="exp-date">2007 — 2013</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-company">University of A Coruña</span>
+          <span class="exp-loc">Galicia, Spain</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="block" aria-label="Skills">
+      <p class="cmd-line"><span class="green">yagopinilla@ibm5150:~$</span> cat skills.json</p>
+      <div class="skills-grid">
+        <span class="tag">Product Strategy</span>
+        <span class="tag">Roadmapping</span>
+        <span class="tag">Agile / Scrum</span>
+        <span class="tag">Stakeholder Management</span>
+        <span class="tag">eCommerce</span>
+        <span class="tag">Logistics &amp; WMS</span>
+        <span class="tag">Cross-functional Leadership</span>
+        <span class="tag">Data-driven Decision Making</span>
+        <span class="tag">Spanish · native</span>
+        <span class="tag">Galician · native</span>
+        <span class="tag">English · C2</span>
+      </div>
+    </section>
+
+    <footer class="footer-line">
+      <span class="green">yagopinilla@ibm5150:~$</span> <span class="cursor" aria-hidden="true"></span>
+    </footer>
+
+  </main>
+</body>
+</html>
